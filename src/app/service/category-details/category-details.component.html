@@ -9,7 +9,7 @@
 <br/>
 <br/>
 
-<div ngFor="let p of category.products">
+<div *ngFor="let p of category.products">
   <h6>product name: <a routerLink="['/product/' + {p.id}]">{{p.name}}</a></h6>
   <h6>description: {{p.description}}</h6>
   <h6>description: {{p.price}}</h6>

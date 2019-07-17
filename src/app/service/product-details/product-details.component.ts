@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Product} from '../../_model/product-model';
 import {ProductService} from '../product.service';
 import {Observable} from 'rxjs';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-product-details',
@@ -11,15 +12,13 @@ import {Observable} from 'rxjs';
 export class ProductDetailsComponent implements OnInit {
 
   public productId: string;
-  public product: Observable<Product>;
+  public product$: Observable<Product>;
 
-  constructor(private productService: ProductService) { }
+  constructor(private  route: ActivatedRoute, private productService: ProductService) { }
 
   ngOnInit() {
-    // this.productId = this.route.snapshot.paramMap.get('id');
-    //
-    // this.product$ = this.productService.getById(this.productId);
-    //TODO FIX
-  }
+    this.productId = this.route.snapshot.paramMap.get('id');
 
+    this.product$ = this.productService.getById(this.productId);
+  }
 }

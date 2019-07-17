@@ -205,6 +205,5 @@
   <div class="mt-5" *ngFor="let c of categories">
     <p>Category name: <a [routerLink]="['/category/' + c.id]">{{c.name}}</a></p>
     <p>Category description: {{c.description}}</p>
-    <p>products: {{c.products}}</p>
   </div>
 </div>

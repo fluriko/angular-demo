@@ -1,0 +1,20 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label for="firstName" >first name</label>
+  <input id="firstName" type="text" formControlName="firstName">
+
+  <label for="lastName" >last name</label>
+  <input id="lastName" type="text" formControlName="lastName">
+
+  <label for="email" >email</label>
+  <input id="email" type="email" (change)="validateEmail()" formControlName="email">
+  <p *ngIf="invalidEmailMsg" style="color: red">{{invalidEmailMsg}}</p>
+  <p *ngIf="validEmailMsg" style="color: green">{{validEmailMsg}}</p>
+
+  <label for="password" >password</label>
+  <input id="password" type="password"  formControlName="password">
+
+  <label for="confirmPassword" >confirm password</label>
+  <input id="confirmPassword" type="password"  formControlName="confirmPassword">
+
+  <button type="submit" *ngIf="form.valid">submit</button>
+</form>

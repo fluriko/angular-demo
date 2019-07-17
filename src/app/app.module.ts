@@ -7,18 +7,23 @@ import { CategoryComponent } from './category/category.component';
 import { CategoryDetailsComponent } from './service/category-details/category-details.component';
 import { ProductDetailsComponent } from './service/product-details/product-details.component';
 import {HttpClientModule} from '@angular/common/http';
+import { AddUserComponent } from './add-user/add-user.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     CategoryComponent,
     CategoryDetailsComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
